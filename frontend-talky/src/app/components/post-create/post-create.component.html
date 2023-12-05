@@ -1,0 +1,62 @@
+<!-- <p>post-create works!</p> -->
+<!-- <button mat-icon-button style="float:right" matDialogClose>
+    <mat-icon>close</mat-icon>
+</button> -->
+<!-- <mat-dialog-content>
+    <header>
+        <h1>Create Post</h1>
+    </header>
+    <p>
+        <mat-form-field>
+            <input matInput placeholder="Name" style="width:100rem">
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput placeholder="Email">
+            <mat-icon matSuffix>draft</mat-icon>
+        </mat-form-field>
+
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput placeholder="Tex">
+            <mat-icon matSuffix>Save</mat-icon>
+        </mat-form-field>
+
+    </p>
+</mat-dialog-content> -->
+
+
+
+<div class="post-create-container">
+    <button mat-icon-button style="float:right" matDialogClose>
+        <mat-icon>close</mat-icon>
+    </button>
+    <div class="form-container">
+        <header>
+            <h1>Create Post</h1>
+        </header>
+        <form [formGroup]="createPostForm" (submit)="submit()" class="w-[100%]">
+            <mat-form-field style="width: 100%;">
+              <mat-label>Post content</mat-label>
+              <input matInput type="text" formControlName="postContent" required>
+              <mat-error *ngIf="createPostForm.controls['postContent'].touched && createPostForm.controls['postContent'].invalid">
+                <span *ngIf="createPostForm!.controls['postContent'].hasError('required')">This field is mandatory.</span>
+              </mat-error>
+            </mat-form-field>
+          </form>
+          
+    </div>
+    <mat-dialog-actions align="end">
+        <button mat-raised-button color="primary">Post</button>
+        <button mat-raised-button color="warn" matDialogClose="">Cancel</button>
+        
+        
+    </mat-dialog-actions>
+</div>
+
+
+
