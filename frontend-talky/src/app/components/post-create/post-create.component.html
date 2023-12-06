@@ -39,7 +39,7 @@
         <header>
             <h1>Create Post</h1>
         </header>
-        <form [formGroup]="createPostForm" (submit)="submit()" class="w-[100%]">
+        <form [formGroup]="createPostForm" class=" ml-7 w-[90%]">
             <mat-form-field style="width: 100%;">
               <mat-label>Post content</mat-label>
               <input matInput type="text" formControlName="postContent" required>
@@ -47,15 +47,25 @@
                 <span *ngIf="createPostForm!.controls['postContent'].hasError('required')">This field is mandatory.</span>
               </mat-error>
             </mat-form-field>
+
+            <mat-form-field style="width: 100%;">
+                <mat-label>postImage</mat-label>
+                <input matInput type="text" formControlName="postContent" required>
+                <mat-error *ngIf="createPostForm.controls['postContent'].touched && createPostForm.controls['postContent'].invalid">
+                  <span *ngIf="createPostForm!.controls['postContent'].hasError('required')">This field is mandatory.</span>
+                </mat-error>
+              </mat-form-field>
+
+              <mat-dialog-actions align="end">
+                <button mat-raised-button color="primary" type="submit"  (click)="submit() " >Post</button>
+                <button mat-raised-button color="warn" matDialogClose="">Cancel</button>
+                
+                
+            </mat-dialog-actions>
           </form>
           
     </div>
-    <mat-dialog-actions align="end">
-        <button mat-raised-button color="primary">Post</button>
-        <button mat-raised-button color="warn" matDialogClose="">Cancel</button>
-        
-        
-    </mat-dialog-actions>
+
 </div>
 
 

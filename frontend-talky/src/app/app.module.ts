@@ -17,7 +17,12 @@ import{MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button'
-import{ ReactiveFormsModule} from '@angular/forms'
+import{ ReactiveFormsModule} from '@angular/forms';
+import { MyPostsComponent } from './components/my-posts/my-posts.component'
+import { RouterModule } from '@angular/router';
+import { TalkiesComponent } from './components/talkies/talkies.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { ViewProfileComponent } from './components/view-profile/view-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +32,10 @@ import{ ReactiveFormsModule} from '@angular/forms'
     AllPostsComponent,
     SideNavigationComponent,
     PostCreateComponent,
+    MyPostsComponent,
+    TalkiesComponent,
+    EditProfileComponent,
+    ViewProfileComponent,
     
   
   
@@ -41,7 +50,8 @@ import{ ReactiveFormsModule} from '@angular/forms'
     MatDialogModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

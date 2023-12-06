@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators} from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-create',
@@ -9,7 +11,7 @@ import { FormGroup,FormBuilder, Validators} from '@angular/forms';
 export class PostCreateComponent implements OnInit {
    createPostForm!:FormGroup
 
-   constructor(private formBuilder:FormBuilder){}
+   constructor(private formBuilder:FormBuilder, private route:Router, private dialogRef:MatDialogRef<PostCreateComponent>){}
 
 
    ngOnInit(){
@@ -25,6 +27,11 @@ export class PostCreateComponent implements OnInit {
 
 
   submit(){
+  
+    console.log(this.createPostForm.value )
+    this.dialogRef.close()
+    this.route.navigate(['all'])
+    
 
   }
 

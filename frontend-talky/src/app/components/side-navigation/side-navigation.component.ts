@@ -1,4 +1,6 @@
 import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { PostCreateComponent } from '../post-create/post-create.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-side-navigation',
@@ -10,7 +12,7 @@ export class SideNavigationComponent {
   mini:boolean=true;
 
 
-  constructor(private elementRef:ElementRef,private renderer: Renderer2){}
+  constructor(private elementRef:ElementRef,private renderer: Renderer2,private matDialog:MatDialog){}
   
 
   // toggleSideBar() {
@@ -46,5 +48,13 @@ export class SideNavigationComponent {
   //     this.mini = true;
   //   }
   // }
+
+
+  openDialog(){
+    this.matDialog.open(PostCreateComponent,{
+      width:'700px',
+      
+    });
     
+}
 }
