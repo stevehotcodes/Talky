@@ -23,6 +23,7 @@ import { RouterModule } from '@angular/router';
 import { TalkiesComponent } from './components/talkies/talkies.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { ViewProfileComponent } from './components/view-profile/view-profile.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { ViewProfileComponent } from './components/view-profile/view-profile.com
     TalkiesComponent,
     EditProfileComponent,
     ViewProfileComponent,
+    LandingPageComponent,
     
   
   

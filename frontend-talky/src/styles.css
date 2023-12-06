@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
  @import url('https://fonts.googleapis.com/css2?family=Itim&family=Poppins:ital,wght@0,700;0,800;1,600&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 /* tailwind */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
@@ -7,7 +8,7 @@
 
 
 body {
-    background-color: rgb(246,249,251);
+    /* background-color: rgb(208, 208, 208); */
     margin: 0;
     min-height: 100svh;
     width: 100%;
@@ -22,12 +23,15 @@ app-root {
     min-height: 100svh;
     width: 100%;
     /* border: 2px solid red; */
-    background-color: rgb(246, 249, 251);
+    background-color: rgb(235, 235, 235);
 }
 app-all-posts{
     min-height: 100svh;
     width: 100%;  display: flex;
     flex-direction: column;
+    
+}
+app-login{
     
 }
 html, body { height: 100%; }
