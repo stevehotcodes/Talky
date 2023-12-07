@@ -39,12 +39,16 @@ h3{
 .main{
     display: flex;
     width:99.7%;
+    width:100%;
+    justify-content: center;
     /* justify-content: space-around; */
     /* margin:0 10rem */
 }
 
 .post-search-container{
-    flex: 0.7;
+
+    flex: 0.5;
+    margin-left:-280px;
     /* border:2px solid blue; */
     
     /* border: 2px solid red; */
@@ -69,6 +73,7 @@ h3{
     gap:10px;
     position:fixed;
     right:0;
+    margin-right: 23px;
      
     
 }
@@ -83,7 +88,7 @@ h3{
     margin:0.3rem;
     /* border-radius: 20px; */
 }
-@media screen and (max-width:1623px){
+@media screen and (max-width:1024px){
     .followers-followings-wrapper{
         display:none;
     }
@@ -95,9 +100,6 @@ h3{
         position: sticky;
         top:0;
         flex-grow:1;
-        
-
-        
         
     }
     #default-search{
