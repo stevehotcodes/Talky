@@ -5,37 +5,52 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-*{
-    box-sizing:border-box
 
-}
 
 
 body {
 
     margin: 0;
-    min-height: 100svh;
-    width: 100%;
-    height: 100%;
-    
+    padding:0;
+    /* min-height: 100svh; */
+    /* width: 100%; */
+    /* height: 100%; */
+      /* border: 2px solid red; */
 }
 
 app-root {
     display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    min-height: 100svh;
-    width: 100%;
+    
+    /* flex-direction: column; */
+    /* justify-content: space-around; */
+    flex:1;
+    min-height: 100vh;
+    /* width: 100vw; */
+      /* overflow-x:hidden; */
+    flex-grow: 1;
     /* border: 2px solid red; */
     background-color: rgb(235, 235, 235);
 
 }
-app-all-posts{
-    min-height: 100svh;
-    width: 100%;  display: flex;
-    flex-direction: column;
+app-all-posts,app-my-posts,app-talkies{
+    /* min-height: 100svh; */
+    width: 90%; 
+    /* border:2px solid blue; */
+     display: flex;
+     justify-content: space-around;
+     margin-left:200px;     /* align-items: center; */
+     /* overflow-x:hidden; */
+     /* flex-shrink: 1;/ */
+     /* flex:90%; */
+    /* flex-direction: column; */
     
 }
+app-talkies{
+    border:2px solid green;
+    background-color: red;
+
+}
+
 app-landing-page{
     background: url('./assets/Cool-Background-GIF.gif') ;
     background-repeat: no-repeat;
@@ -48,5 +63,20 @@ app-landing-page{
     
 }
 
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+@media screen and (max-width:1623px){
+    app-all-posts,app-my-posts,app-talkies{
+        flex:1;
+        width:100vw;
+        /* background-color: yellow; */
+        /* margin-left:-70px */
+        margin:0 auto;
+    }
+    
+    
+}

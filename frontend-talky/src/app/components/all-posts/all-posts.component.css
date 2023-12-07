@@ -1,10 +1,8 @@
 .header{
-    /* margin-top:1rem; */
     display: flex;
     justify-content: space-around;
     align-items: center;
     height:10vh;
-    /* border: 1px solid red; */
     background-color: #fff;
     filter: drop-shadow(2px 2px 2px #3d3d3d);
 }
@@ -19,7 +17,7 @@ h3{
 .search-wrapper{
     display: flex;
     align-items:center;
-    background-color: #a5a4a4;
+
 
 }
 .search-wrapper>input{
@@ -38,43 +36,31 @@ h3{
 }
 .main{
     display: flex;
-    /* justify-content: space-around; */
-    /* border:2px solid red; */
-    /* margin:0 10rem */
+    width:100%;
 }
 
 .post-search-container{
-    flex: 0.5;
-    /* border:2px solid blue; */
-    margin:0 .5rem ;
-    /* border: 2px solid red; */
-    margin-left: -300px;
+    flex: 0.7;
+
 }
 .posts-wrapper{
-    /* flex:0.5; */
-    /* border:2px solid red;  */
-    margin-top: 1rem;
+   
     border-radius: 20px;
-    /* flex-grow:1; */
-    /* overflow-y: scroll; */
-    /* height: 90vh; */
+  
 }
 
 
 .followers-followings-wrapper{
-    flex:0.35;
-    /* border:2px solid green; */
+    flex:0.3;
     filter:drop-shadow(2px 2px 2px #d9d9d9);
-    /* border-radius:20px; */
     display: flex;
     flex-direction: column;
-    gap:20px;
-    overflow-y: auto;
+    gap:10px;
     position:fixed;
-    right:40px
-     
+    right:0;
     
 }
+
 .all-posts-svg{
     display: flex;
     align-items: center;
@@ -83,8 +69,40 @@ h3{
 
 .post-cards{
     filter: drop-shadow(2px 2px 2px #3d3d3d);
-    margin:0.3rem;
-    /* border-radius: 20px; */
+
 }
 
-
+@media screen and (max-width:1623px){
+    .followers-followings-wrapper{
+        display:none;
+    }
+    .search-add-icon-wrapper{
+        background-color: white;
+        filter:drop-shadow(2px 2px 2px rgb(35, 35, 35));
+        width:100%;
+        margin:  auto;
+        position: sticky;
+        top:0;
+        flex-grow:1;
+        
+    }
+    #default-search{
+        width:50vw;
+    }
+    .main{
+        width:100%
+    }
+    .post-search-container{
+        min-width:89.5%;
+        justify-content: center;
+        margin-left: auto;
+       
+    }
+    app-side-navigation{
+        display: relative;
+        flex-grow:0.1;
+        font-size:12px
+    }
+    
+    
+}

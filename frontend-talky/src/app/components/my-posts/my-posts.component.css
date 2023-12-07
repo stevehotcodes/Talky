@@ -38,22 +38,22 @@ h3{
 }
 .main{
     display: flex;
+    width:99.7%;
     /* justify-content: space-around; */
-    /* border:2px solid red; */
     /* margin:0 10rem */
 }
 
 .post-search-container{
-    flex: 0.5;
+    flex: 0.7;
     /* border:2px solid blue; */
-    margin:0 1rem ;
+    
     /* border: 2px solid red; */
-    margin-left: -300px;
+    /* margin-left: -300px; */
 }
 .posts-wrapper{
     /* flex:0.5; */
     /* border:2px solid red;  */
-    margin-top: 1rem;
+    margin-top: 0.3rem;
     border-radius: 20px;
     /* flex-grow:1; */
     /* overflow-y: scroll; */
@@ -62,16 +62,13 @@ h3{
 
 
 .followers-followings-wrapper{
-    flex:0.35;
-    /* border:2px solid green; */
+    flex:0.2;
     filter:drop-shadow(2px 2px 2px #d9d9d9);
-    /* border-radius:20px; */
     display: flex;
     flex-direction: column;
-    gap:20px;
-    overflow-y: auto;
-     position:fixed;
-     right:40px
+    gap:10px;
+    position:fixed;
+    right:0;
      
     
 }
@@ -86,5 +83,42 @@ h3{
     margin:0.3rem;
     /* border-radius: 20px; */
 }
+@media screen and (max-width:1623px){
+    .followers-followings-wrapper{
+        display:none;
+    }
+    .search-add-icon-wrapper{
+        background-color: white;
+        filter:drop-shadow(2px 2px 2px rgb(35, 35, 35));
+        width:100%;
+        margin:  auto;
+        position: sticky;
+        top:0;
+        flex-grow:1;
+        
 
+        
+        
+    }
+    #default-search{
+        width:50vw;
+    }
+    .main{
+        width:100%
+    }
+    .post-search-container{
+        min-width:89.5%;
+        justify-content: center;
+        margin-left: auto;
+        
+       
+    }
+    app-side-navigation{
+        display: relative;
+        flex-grow:0.1;
+        font-size:12px
+    }
+    
+    
+}
 
