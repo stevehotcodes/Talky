@@ -5,3 +5,6 @@ h3{
     flex:0.7;
     /* margin-left:100px; */
 }
+*{
+    border:2px solid red;
+}

@@ -6,9 +6,11 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { AllPostsComponent } from './components/all-posts/all-posts.component';
 import { MyPostsComponent } from './components/my-posts/my-posts.component';
 import { TalkiesComponent } from './components/talkies/talkies.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 const routes: Routes = [
-  {path:'',component:LoginComponent},
+  {path:'',component:LandingPageComponent},
+  {path:'login',component:LoginComponent},
   {path:'signup',component:SignUpComponent},
   {path:'reset',component:ResetPasswordComponent},
   {path:'all',component:AllPostsComponent},

@@ -5,10 +5,14 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+*{
+    box-sizing:border-box
+
+}
 
 
 body {
-    /* background-color: rgb(208, 208, 208); */
+
     margin: 0;
     min-height: 100svh;
     width: 100%;
@@ -24,6 +28,7 @@ app-root {
     width: 100%;
     /* border: 2px solid red; */
     background-color: rgb(235, 235, 235);
+
 }
 app-all-posts{
     min-height: 100svh;
@@ -31,8 +36,17 @@ app-all-posts{
     flex-direction: column;
     
 }
-app-login{
+app-landing-page{
+    background: url('./assets/Cool-Background-GIF.gif') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    
+    
     
 }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

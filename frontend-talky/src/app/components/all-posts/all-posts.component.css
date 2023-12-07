@@ -70,8 +70,8 @@ h3{
     flex-direction: column;
     gap:20px;
     overflow-y: auto;
-     position:fixed;
-     right:40px
+    position:fixed;
+    right:40px
      
     
 }
