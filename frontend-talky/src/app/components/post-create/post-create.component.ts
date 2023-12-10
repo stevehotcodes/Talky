@@ -25,7 +25,6 @@ export class PostCreateComponent implements OnInit {
 
 
 
-
   submit(){
   
     console.log(this.createPostForm.value )

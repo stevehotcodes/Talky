@@ -3,9 +3,9 @@
   width: 90%;
   height: 90vh;
   display: flex;
-  /* justify-content: center; */
   margin: 50px 150px 30px 90px;
 }
+
 .form-wrapper>img{
   display: none;
 }
