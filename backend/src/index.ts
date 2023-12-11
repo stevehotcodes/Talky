@@ -4,6 +4,7 @@ import { dbConnectService } from "./services/dbConnection.service";
 import mssql from 'mssql'
 import { dbConfig } from "./config/dbConfig";
 import userRouter from "./routes/users.routes";
+import postsRouter from "./routes/posts.routes";
 
 
 const port= 3400
@@ -19,6 +20,7 @@ app.get('/',(req:Request,res:Response)=>{
 })
 
 app.use('/users',userRouter)
+app.use('/posts',postsRouter)
 
 // console.log( process.env.DB_USER as string ||'sa',)
 

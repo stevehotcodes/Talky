@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE getAllPosts
+AS
+BEGIN
+    SELECT * FROM posts
+END
