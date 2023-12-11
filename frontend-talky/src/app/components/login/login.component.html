@@ -14,15 +14,23 @@
             <img src="../../../assets/Talky-12-6-2023.png" alt="" class="w-[30%]">
             <!-- <h3 class="css-3d-text mt-10">Talky</h3> -->
             <h3>Log in</h3>
-            <form action="">
+            <form action=""[formGroup]="loginForm">
                 <div class="label-input-group">
                     <label>Email</label><br>
                     <input type="text" name="" id="" placeholder="Email">
+                    <mat-error *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid">
+                        <span *ngIf="loginForm!.controls['email'].hasError('required')">email is mandatory.</span>
+                        <span *ngIf="loginForm!.controls['email'].hasError('pattern')">Invalid email :Must be in the format of 'example@gmail.com' </span>
+                      </mat-error>
                 </div>
     
                 <div class="label-input-group">
                     <label>Password</label><br>
                     <input type="password" name="" id="" placeholder="Password">
+                    <mat-error *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">
+                        <span *ngIf="loginForm!.controls['password'].hasError('required')">password is mandatory.</span>
+                        <span *ngIf="loginForm!.controls['password'].hasError('pattern')">A valid password must contain uppercase,lowercase,special characters, and numbers </span>
+                      </mat-error>
                 </div>
     
                 <div class="label-input-group">
