@@ -4,9 +4,9 @@
 
 <!-- <div class="main  z-2 "> -->
     <app-side-navigation class="z-1"></app-side-navigation>  
-    <div class=" post-search-container flex flex-col  items-center border border-red-400 " >
+    <div class=" post-search-container flex flex-col  items-center w-100% " >
     
-            <h3 class="sticky top-0 bg-white p-4 z-50  fontt font-bold
+            <h3 class="sticky top-0 bg-white p-4 z-50  w-[90%] font font-bold
             ">People you may  know </h3>   
        <div class="search-add-icon-wrapper flex justify-center items-center  border  border-red-400 bg-white mt-0 w-[60%] p-1 z-50 ">
         <form >   
@@ -24,10 +24,10 @@
       
         <!-- <svg class="mt-2 pl-2"xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" viewBox="0 0 20 20"><path fill="#0E2A47" d="M11 9V5H9v4H5v2h4v4h2v-4h4V9h-4zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20z"/></svg> -->
        </div>    
-       
+    
        
 
-      <div class=" profile-cards-wrapper flex flex-col items-center justify-center space-x-3 bg-30 w-[60%] ">
+      <div class="profile-cards-wrapper flex flex-col items-center justify-center space-x-3 bg-30 w-[60%] ">
 
 
         <div class="people-profile-cards  flex   items-center p-6 mt-4 bg-white  justify-around gap-x-[0.21rem] border border-gray-100 w-[100%]  h-[70px]">
@@ -36,6 +36,12 @@
             <button type="submit" class="text-sm rounded-full py-1.5 px-3.5 bg-secondery bg-[#0E2A47] text-white "> Follow</button>
 
         </div>      
+        <div class="people-profile-cards  flex   items-center p-6 mt-4 bg-white  justify-around gap-x-[0.21rem] border border-gray-100 w-[100%]  h-[70px]">
+            <img src="../../../assets/man.png" alt="" class="w-[40px] ">
+            <a  (mouseover)="openDialog()">Caleb</a>
+            <button type="submit" class="text-sm rounded-full py-1.5 px-3.5 bg-secondery bg-[#0E2A47] text-white "> Follow</button>
+
+        </div>  
         <div class="people-profile-cards  flex   items-center p-6 mt-4 bg-white  justify-around gap-x-[0.21rem] border border-gray-100 w-[100%]  h-[70px]">
             <img src="../../../assets/man.png" alt="" class="w-[40px] ">
             <a  (mouseover)="openDialog()">Caleb</a>

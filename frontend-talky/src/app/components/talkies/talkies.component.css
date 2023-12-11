@@ -41,9 +41,9 @@ h3{
 }
 
 .post-search-container{
-    /* flex: 0.7; */
+    flex: 0.7;
     width:90%;
-    /* background-color: green; */
+  
     
 
 }
@@ -98,11 +98,15 @@ h3{
         width:100%
     }
     .post-search-container{
-        min-width:89.5%;
+        min-width:90.5%;
         justify-content: center;
         margin-left: auto;
        
     }
+.profile-cards-wrapper{
+    min-width:90.5%;
+}
+
     .search-add-icon-wrapper{
         flex-grow:1
     }

@@ -43,8 +43,7 @@ h3{
 .post-search-container{
     flex: 0.5;
     margin-left:-280px;
-    border:2px solid red;
-
+    /* border:2px solid red; */
 }
 .posts-wrapper{
    
