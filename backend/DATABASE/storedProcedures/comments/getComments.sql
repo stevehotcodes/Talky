@@ -3,5 +3,5 @@ CREATE OR ALTER PROCEDURE getAllcomments(
 AS
 BEGIN
 	SELECT * FROM comments
-	WHERE postID=@postID
+	WHERE postID=@postID AND isDeleted=0
 END

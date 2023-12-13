@@ -6,9 +6,12 @@ CREATE TABLE users(
     password VARCHAR(200) NOT NULL,
     role VARCHAR (200) NOT NULL DEFAULT 'user',
     profileImageUrl VARCHAR(500) NOT NULL DEFAULT 'none',
+    bio VARCHAR (8000) NOT NULL DEFAULT 'no bio',
     dateJoined VARCHAR(200) NOT NULL DEFAULT GETDATE(),
     isDeleted INT DEFAULT 0,
     isWelcomed INT DEFAULT 0,
     isResetPasswordEmailSent INT DEFAULT 0,
     resetPasswordToken VARCHAR (200) DEFAULT 'empty'
-    )
+)
+
+

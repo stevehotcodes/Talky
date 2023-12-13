@@ -123,6 +123,7 @@ export const signUp = async (req: Request, res: Response) => {
     }
   }
 
+  //gets all users but not the signed user
   export const getAllUsers=async(req:ExtendedUser,res:Response)=>{
     try
     {
@@ -146,11 +147,12 @@ export const signUp = async (req: Request, res: Response) => {
     }
   }
 
+
   export const updateUser =async (req:ExtendedUser,res:Response)=>{
     try{
         let id=req.info?.id! as string
-        let { userName, email }=req.body
-        if(!userName ||!email ){
+        let { userName, email,bio, profileImageUrl}=req.body
+        if(!userName ||!email ||!bio){
             return res.status(400).json({message: 'required values are missing kindly check again'})
         }
         let user:User= await (await dbInstance.exec('getAUserById', {id})).recordset[0]
@@ -158,9 +160,8 @@ export const signUp = async (req: Request, res: Response) => {
             return res.status(404).json({message: 'The user does not exist'});
   
          }
-        // const hashedPassword=await bcrypt.hash(password, 5);
-  
-        await dbInstance.exec('updateUser',{id,userName, email})
+      
+        await dbInstance.exec('updateUser',{id,userName, email,bio,profileImageUrl})
         return res.status(200).json({message:"the user's details was updated successfully "})
   
     }
