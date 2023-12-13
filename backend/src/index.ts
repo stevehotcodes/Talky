@@ -5,6 +5,10 @@ import mssql from 'mssql'
 import { dbConfig } from "./config/dbConfig";
 import userRouter from "./routes/users.routes";
 import postsRouter from "./routes/posts.routes";
+import commentRouter from "./routes/comment.routes";
+import postLikeRouter from "./routes/postLike.routes";
+import commentLikesRouter from "./routes/commentLikes.routes";
+import followerRouter from "./routes/followers.routes";
 
 
 const port= 3400
@@ -21,7 +25,10 @@ app.get('/',(req:Request,res:Response)=>{
 
 app.use('/users',userRouter)
 app.use('/posts',postsRouter)
-
+app.use('/comments',commentRouter)
+app.use('/postlike',postLikeRouter)
+app.use('/commentLike',commentLikesRouter)
+app.use('/followers',followerRouter)
 // console.log( process.env.DB_USER as string ||'sa',)
 
 

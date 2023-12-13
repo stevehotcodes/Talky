@@ -7,3 +7,4 @@ CREATE TABLE comments(
     commentTimeStamp   DATE DEFAULT GETDATE()
     
 )
+
