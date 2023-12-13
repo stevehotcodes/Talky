@@ -26,6 +26,33 @@ try {
     
 }
 
+
+export const  addReplyToComment =async (req:ExtendedUser, res:Response)=>{
+    try {
+        const id=v4()
+        
+        const userID=req!.info?.id as string
+        const {parentCommentID}=req.params
+        
+        
+ 
+        const{commentContent,postID}=req.body
+    
+        let result=await dbInstance.exec('addReplyToComment',{id,userID,commentContent,postID,parentCommentID:id})
+        console.log(result)
+        return res.status(201).json({message:"reply added"})
+        
+    } catch (error:any) {
+        return res.status(500).json({error:error.message})
+    }
+        
+        
+    }
+
+
+
+
+
 export const getAllComments= async(req:Request, res:Response)=>{
     try {
          const {postID}=req.params
@@ -38,6 +65,8 @@ export const getAllComments= async(req:Request, res:Response)=>{
         
     }
 }
+
+
 
 export const deleteComment=async (req:ExtendedUser, res:Response)=>{
     try {

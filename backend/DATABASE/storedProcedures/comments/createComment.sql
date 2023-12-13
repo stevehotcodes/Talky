@@ -8,3 +8,4 @@ BEGIN
     INSERT INTO comments (id, userID, commentContent, postID)
     VALUES (@id, @userID, @commentContent, @postID);
 END;
+
