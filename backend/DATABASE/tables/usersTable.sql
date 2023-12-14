@@ -11,7 +11,9 @@ CREATE TABLE users(
     isDeleted INT DEFAULT 0,
     isWelcomed INT DEFAULT 0,
     isResetPasswordEmailSent INT DEFAULT 0,
-    resetPasswordToken VARCHAR (200) DEFAULT 'empty'
+    resetToken VARCHAR (7000) DEFAULT 'empty'
+    
 )
 
-
+ALTER TABLE users
+ADD 

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAUserById, getAllUsers, getSignedInUser, loginUser, signUp, updateUser } from "../controllers/users.controllers";
+import { forgotPassword, getAUserById, getAllUsers, getSignedInUser, loginUser, resetPassword, signUp, updateUser } from "../controllers/users.controllers";
 import { accountRequired } from "../middlewares/verifyToken";
 
 
@@ -13,6 +13,8 @@ userRouter.get('/:id',getAUserById)
 userRouter.post("/logged",accountRequired,getSignedInUser);
 userRouter.post('/all',accountRequired,getAllUsers)
 userRouter.patch('/update',accountRequired,updateUser)
+userRouter.post('/forgot-password', forgotPassword)
+userRouter.post('/reset-password/:token',resetPassword)
 
 
 

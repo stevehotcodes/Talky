@@ -31,3 +31,8 @@ export interface IUserDetails{
 }
 
 
+export interface IresetPasswordData {
+  id:string
+  password:string
+
+}
