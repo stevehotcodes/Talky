@@ -204,25 +204,25 @@ export const forgotPassword = async (req: Request, res: Response) => {
 
       const resetLink = `http://localhost:3400/users/reset-password/${token}`;
 
-      // await ejs.renderFile(path.resolve(__dirname,'backend/templates/reset-password-template.ejs'), { firstName: user.fullName, newPassword, resetLink }, async (err, emailHTML) => {
-      //   if (err) {
-      //     console.error(err)
-      //     return false
-      //   }
+      await ejs.renderFile('templates/reset-password-template.ejs', { firstName: user.fullName, newPassword, resetLink }, async (err, emailHTML) => {
+        if (err) {
+          console.error(err)
+          return false
+        }
 
-      //   const mailerInstance = NodeMail.getInstance()
+        const mailerInstance = NodeMail.getInstance()
 
-      //   await mailerInstance.send(user.email, 'Password Reset Link', emailHTML)
+        await mailerInstance.send(user.email, 'Password Reset Link', emailHTML)
 
-      //   console.log('email request for password reset has been sent')
-      //   return true
+        console.log('email request for password reset has been sen with ejs')
+        return true
 
 
-      // })
+      })
 
       const mailerInstance = NodeMail.getInstance()
       await mailerInstance.send(user.email,"Password Reset",resetLink);
-      console.log('email request for password reset has been sent')
+      // console.log('email request for password reset has been sent')
       // return true
 
     }

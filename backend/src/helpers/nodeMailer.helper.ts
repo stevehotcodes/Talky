@@ -17,20 +17,20 @@ export default class NodeMail {
         return NodeMail.instance
     }
 
-    private static setMessageOptions(recipient:string, emailSubject:string,resetLink:string) {
+    private static setMessageOptions(recipient:string, emailSubject:string,html:string) {
         const messageOptions:nodemailerMessageOptions = {
             from: process.env.NODEMAILER_EMAIL as string || 'stevehotcodes',
             to: recipient,
             subject: emailSubject,
-            text: `Click the following link to reset your password: ${resetLink}`
+            html: html
         }
 
         return messageOptions
     }
 
-    async send(recipient:string, emailSubject:string,resetLink:string) {
+    async send(recipient:string, emailSubject:string,html:string) {
         const transporter = nodemailer.createTransport(config)
-        const messageOptions:nodemailerMessageOptions = NodeMail.setMessageOptions(recipient, emailSubject,resetLink)
+        const messageOptions:nodemailerMessageOptions = NodeMail.setMessageOptions(recipient, emailSubject,html)
 
         const info = await transporter.sendMail(messageOptions)
 
