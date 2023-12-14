@@ -29,7 +29,7 @@ submit(){
   
   console.log(this.editProfileForm.value )
   this.dialogRef.close()
-  this.route.navigate(['myposts'])
+  this.route.navigate(['profile'])
   
 
 }

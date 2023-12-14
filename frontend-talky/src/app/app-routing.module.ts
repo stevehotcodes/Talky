@@ -7,6 +7,7 @@ import { AllPostsComponent } from './components/all-posts/all-posts.component';
 import { MyPostsComponent } from './components/my-posts/my-posts.component';
 import { TalkiesComponent } from './components/talkies/talkies.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { ProfileViewComponent } from './components/profile-view/profile-view.component';
 
 const routes: Routes = [
   {path:'',component:LandingPageComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'reset',component:ResetPasswordComponent},
   {path:'all',component:AllPostsComponent},
   {path:'myposts',component:MyPostsComponent},
-  {path:'talkies',component:TalkiesComponent}
+  {path:'talkies',component:TalkiesComponent},
+  {path:'profile',component:ProfileViewComponent}
   
 ];
 

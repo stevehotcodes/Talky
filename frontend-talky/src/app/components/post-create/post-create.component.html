@@ -7,26 +7,37 @@
         <header>
             <h1>Create Post</h1>
         </header>
-        <form [formGroup]="createPostForm" class=" ml-7 w-[90%]">
+        <form (ngSubmit)="submit()" class=" ml-7 w-[90%] h-[90vh]">
             <mat-form-field style="width: 100%;">
               <mat-label>Post content</mat-label>
-              <input matInput type="text" formControlName="postContent" required>
-              <mat-error *ngIf="createPostForm.controls['postContent'].touched && createPostForm.controls['postContent'].invalid">
+            
+              <textarea matInput [(ngModel)]="postContent" name="postContent" placeholder="What's happening?"></textarea>
+              <!-- <mat-error *ngIf="createPostForm.controls['postContent'].touched && createPostForm.controls['postContent'].invalid">
                 <span *ngIf="createPostForm!.controls['postContent'].hasError('required')">This field is mandatory.</span>
-              </mat-error>
+              </mat-error> -->
             </mat-form-field>
 
-            <mat-form-field style="width: 100%;">
+            <!-- <mat-form-field style="width: 100%;">
                 <mat-label>postImage</mat-label>
-                <input matInput type="text" formControlName="postContent" required>
+                <input matInput type="file" formControlName="postContent" required>
                 <mat-error *ngIf="createPostForm.controls['postContent'].touched && createPostForm.controls['postContent'].invalid">
                   <span *ngIf="createPostForm!.controls['postContent'].hasError('required')">This field is mandatory.</span>
                 </mat-error>
-              </mat-form-field>
+              </mat-form-field> -->
+
+              
+                
+                    <input type="file"  (change)="onFileChange($event)"   accept="image/*">
+                    <div *ngIf="imagePreviewUrl">
+                      <img [src]="imagePreviewUrl" alt="Image Preview">
+                    </div>
+                
+                  
+              
 
               <mat-dialog-actions align="end">
                 <button mat-raised-button color="primary" type="submit"  (click)="submit() " >Post</button>
-                <button mat-raised-button color="warn" matDialogClose="">Cancel</button>
+             
                 
                 
             </mat-dialog-actions>

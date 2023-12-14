@@ -24,6 +24,8 @@ import { TalkiesComponent } from './components/talkies/talkies.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { ViewProfileComponent } from './components/view-profile/view-profile.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { CloudinaryModule } from '@cloudinary/ng';
+import { ProfileViewComponent } from './components/profile-view/profile-view.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +40,8 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     EditProfileComponent,
     ViewProfileComponent,
     LandingPageComponent,
+
+    ProfileViewComponent,
     
   
   
@@ -53,7 +57,8 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    CloudinaryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

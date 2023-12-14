@@ -32,9 +32,29 @@ app-login,app-sign-up,app-reset-password{
     margin:0 auto;
     flex:1;
 }
-app-all-posts,app-my-posts{
+
+/* app-all-posts{
+    border:2px solid red;
+    flex:100%;
+    
+    justify-content: flex-start;
+    gap:11%
+
+} */
+
+
+app-all-posts{
+    flex:1;
+    /* background-color: red; */
+    width: 99vw;
+    border:2px solid black;
+    display: flex;
+}
+
+
+app-my-posts{
     min-height: 100svh;
-    width: 90%; 
+    /* width: 90%;  */
     /* border:2px solid blue; */
      display: flex;
      justify-content: space-around;
@@ -42,12 +62,15 @@ app-all-posts,app-my-posts{
 
     
 }
-app-talkies{
+app-talkies,app-profile-view{
     /* border:11px solid yellow; */
     /* background-color: red; */
     min-height: 100svh;
     margin :0 auto;
     flex:0.9
+}
+app-profile-view{
+    margin: left 320px;
 }
 
 app-landing-page{

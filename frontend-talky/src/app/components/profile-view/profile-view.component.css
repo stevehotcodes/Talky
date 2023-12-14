@@ -1,0 +1,269 @@
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height:10vh;
+    background-color: #fff;
+    filter: drop-shadow(2px 2px 2px #3d3d3d);
+}
+
+h3{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+
+.search-wrapper{
+    display: flex;
+    align-items:center;
+
+
+}
+.search-wrapper>input{
+    /* height:3rem; */
+    width:25rem;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background-color:#929191;
+    
+    
+}
+.contact-section{
+    display: flex;
+    align-items: center;
+}
+.main{
+    display: flex;
+
+    width:100%;
+    justify-content: center;
+    /* align-items: center; */
+    /* border: 2px solid red; */
+    /* margin-left: 200px; */
+}
+
+.post-search-container{
+    /* flex: 0.7; */
+    width:100%;
+ 
+  
+    
+
+}
+.posts-wrapper{
+   
+    border-radius: 20px;
+  
+}
+
+
+.followers-followings-wrapper{
+    flex:0.3;
+    filter:drop-shadow(2px 2px 2px #d9d9d9);
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    position:fixed;
+    right:0;
+    
+}
+
+.all-posts-svg{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.post-cards{
+    filter: drop-shadow(2px 2px 2px #3d3d3d);
+
+}
+
+
+
+
+
+
+.signup-container{
+  
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    margin: 50px 150px 30px 90px;
+  
+  }
+  .icon-feature-div{
+      display: flex;
+      align-items: center;
+      gap:10px; 
+  }
+  .welcome-note-div{
+      color:white;
+      background-color: #4C94B5;
+      height: 100%;
+      flex:0.5;
+  }
+  .headline-icon-wrapper{
+      display: flex;
+      flex-direction: column;
+      height:100%;
+      justify-content: center;
+      gap:2rem;
+      align-items: center;
+  }
+  .headline{
+      font-size: 20px;
+   
+  }
+  .icon-feature-div>p{
+      font-size: 16px;
+  }
+  .icon-feature-div>svg{
+      width:20px;
+      height:20px;
+      border-color:white;
+  }
+  
+  h3{
+      font-size: 2.25rem;
+      font-weight:700;
+  }
+  
+  .form-wrapper{
+      flex:0.5;
+      background-color: #f3f3f3;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  
+  
+      
+  }
+  form{
+      margin-top:-1rem;
+      box-shadow: 2px 2px solid gray;
+      width:50%;
+      
+  }
+  .label-input-group{
+      width: 100%;
+      margin: 0.5rem
+  }
+  
+  label{
+      font-weight: 700;
+  }
+  
+  input{
+      width:100%;
+      padding: 12px 15px;
+      margin: 8px 0;
+      background-color: #f8f8f8;
+      border-radius:10px;
+      filter: drop-shadow(0 0 0.75rem rgb(206, 203, 203));
+  
+  }
+  
+  .sign-up-btn{
+      background-color:#4C94B5 ;
+      color:white;
+      border: none;
+  }
+  .sign-up-btn:hover{
+      background-color:transparent;
+      color:black;
+      border: 2px solid#4C94B5;
+  }
+  .form-wrapper>img{
+      display: none;
+  }
+  .form-footer>a{
+      font-weight:700;
+      cursor: pointer;
+      text-align:center;
+      margin: 1rem;
+  }
+  
+  .form-footer>a:hover{
+      color:#4C94B5;
+  
+  }
+  
+  @media screen and (max-width:768px){
+      .form-wrapper>img{
+        display: block;
+      }
+      .welcome-note-div {
+         display: none;
+      }
+      .form-wrapper{
+          flex:1;
+          width:100%;
+          margin:0;
+          flex-grow: 0.95;
+      }
+      .signup-container{
+  
+        margin-left:20px;
+        flex-direction: column;
+      }
+      form{
+        width:90%;
+        margin-left:-10px;
+        
+      }
+    }
+  
+  
+  
+  
+  
+  
+  
+
+@media screen and (max-width:1623px){
+    .followers-followings-wrapper{
+        display:none;
+    }
+    .search-add-icon-wrapper{
+        background-color: white;
+        filter:drop-shadow(2px 2px 2px rgb(35, 35, 35));
+        /* width:100%; */
+        justify-content: center;
+        /* margin:  auto; */
+        position: sticky;
+        /* top:0; */
+        /* flex-grow:1; */
+        
+    }
+    #default-search{
+        width:50vw;
+    }
+    .main{
+        width:100%
+    }
+    .post-search-container{
+        min-width:90.5%;
+        justify-content: center;
+        margin-left: auto;
+       
+    }
+.profile-cards-wrapper{
+    min-width:90.5%;
+}
+
+    .search-add-icon-wrapper{
+        flex-grow:1
+    }
+    app-side-navigation{
+        display: relative;
+        flex-grow:1;
+        font-size:12px
+    }
+    
+    
+}

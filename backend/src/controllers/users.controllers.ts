@@ -77,6 +77,7 @@ export const signUp = async (req: Request, res: Response) => {
     console.log(rest)
 
     const correctPwd = await bcrypt.compare(password, storedPassword);
+    console.log("this the value of the compared password",correctPwd)
     if (!correctPwd) {
       return res.status(401).json({ error: "Invalid credentials" });
     }

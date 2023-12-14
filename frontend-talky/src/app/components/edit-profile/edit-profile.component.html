@@ -34,25 +34,11 @@
             </div>
         </header>
         <form [formGroup]="editProfileForm" class=" ml-7 w-[90%]">
-            <mat-form-field style="width: 100%;">
-              <mat-label>New UserName</mat-label>
-              <input matInput type="text" formControlName="userName" required>
-              <mat-error *ngIf="editProfileForm.controls['userName'].touched && editProfileForm.controls['userName'].invalid">
-                <span *ngIf="editProfileForm!.controls['userName'].hasError('required')">This field is mandatory.</span>
-              </mat-error>
-            </mat-form-field>
-
-            <mat-form-field style="width: 100%;">
-                <mat-label>Email</mat-label>
-                <input matInput type="text" formControlName="email" required>
-                <mat-error *ngIf="editProfileForm.controls['email'].touched && editProfileForm.controls['email'].invalid">
-                  <span *ngIf="editProfileForm!.controls['email'].hasError('required')">This field is mandatory.</span>
-                </mat-error>
-              </mat-form-field>
+    
 
               <mat-dialog-actions align="end">
                 <button mat-raised-button color="primary" type="submit" (click)="submit()" >Edit</button>
-                <button mat-raised-button color="warn" matDialogClose="">Cancel</button>
+                <!-- <button mat-raised-button color="warn" matDialogClose="">Cancel</button> -->
                 
                 
             </mat-dialog-actions>
