@@ -20,3 +20,4 @@ export interface IPostsWithUserDetails{
     userName:string
     profileImagUrl:string
 }
+
