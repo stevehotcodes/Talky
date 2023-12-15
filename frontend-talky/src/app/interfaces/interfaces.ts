@@ -28,3 +28,20 @@ export interface InewPostDetails{
     message:string
     postId:string
  }
+ export interface IPosts{
+    id:string
+    postContent:string
+    postImageUrl:string
+    postTImeStamp:string
+    userID:string
+ }
+ export interface IPostsWithUserDetails{
+    postId:string
+    postImageUrl:string
+    postContent:string
+    postTImeStamp:string
+    userId:string
+    fullName:string
+    userName:string
+    profileImagUrl:string
+}
