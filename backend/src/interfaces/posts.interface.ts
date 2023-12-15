@@ -5,7 +5,7 @@ export interface IPosts{
     postContent:string
     postTImeStamp:string
     userID:string
-    isDeleted:string
+    isDeleted:number
 
 
 }

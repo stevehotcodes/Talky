@@ -1,5 +1,5 @@
 CREATE OR ALTER PROCEDURE getAllPosts
 AS
 BEGIN
-    SELECT * FROM posts
+    SELECT * FROM posts WHERE isDeleted=0
 END

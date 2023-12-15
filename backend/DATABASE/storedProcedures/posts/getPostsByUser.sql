@@ -7,5 +7,5 @@ BEGIN
     FROM posts as p
     LEFT JOIN users as u
     ON  p.userID =u.id
-    WHERE userID=@userID
+    WHERE userID=@userID and p.isDeleted=0
 END

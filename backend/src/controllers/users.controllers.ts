@@ -34,7 +34,7 @@ export const signUp = async (req: Request, res: Response) => {
     ).recordset;
 
     if (!isEmpty(emailTaken)) {
-      return res.json({ error: "This email is already in use" });
+      return res.json({ error: "There is an existing account with that email kindly try to login" });
     }
 
     let id = v4();
