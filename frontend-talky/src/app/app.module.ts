@@ -26,6 +26,9 @@ import { ViewProfileComponent } from './components/view-profile/view-profile.com
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { CloudinaryModule } from '@cloudinary/ng';
 import { ProfileViewComponent } from './components/profile-view/profile-view.component'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { InterceptorService } from './services/interceptor.service';
+import { FlashmessagesComponent } from './components/flashmessages/flashmessages.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +45,7 @@ import { ProfileViewComponent } from './components/profile-view/profile-view.com
     LandingPageComponent,
 
     ProfileViewComponent,
+     FlashmessagesComponent,
     
   
   
@@ -58,9 +62,10 @@ import { ProfileViewComponent } from './components/profile-view/profile-view.com
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    CloudinaryModule
+    CloudinaryModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

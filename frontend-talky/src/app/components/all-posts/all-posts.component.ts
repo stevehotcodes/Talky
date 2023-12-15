@@ -13,11 +13,14 @@ export class AllPostsComponent {
 
   openDialog(){
     this.matDialog.open(PostCreateComponent,{
-      width:'700px',
+      width:'43.75rem',
       
     });
     
   }
+  
+
+
   
 
 }

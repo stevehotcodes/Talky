@@ -12,8 +12,8 @@ body {
 
     margin: 0;
     padding:0;
+   
 }
-
 app-root {
     display: flex;
     
@@ -23,11 +23,45 @@ app-root {
     min-height: 100vh;
     /* width: 100vw; */
       /* overflow-x:hidden; */
-    flex-grow: 1;
+    /* flex-grow: 1; */
     /* border: 2px solid red; */
     background-color: rgb(235, 235, 235);
-
+    font-size:16px
 }
+
+#flash-messages {
+    position: fixed;
+    z-index: 1;
+    top: 5svh;
+    right: 5svw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    width: min(400px, 60svw);
+}
+app-flashmessages {
+    color: white;
+    padding: 0.2rem 0.5rem;
+    font-size: large;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0.9;
+    border-radius: 5px;
+}
+.error {
+    background-color: red;
+}
+
+.success {
+    background-color: green;
+}
+
+.info {
+    background-color: gray;
+}
+
 app-login,app-sign-up,app-reset-password{
     margin:0 auto;
     flex:1;
@@ -44,33 +78,33 @@ app-login,app-sign-up,app-reset-password{
 
 
 app-all-posts{
-    flex:1;
+    /* flex:1; */
     /* background-color: red; */
-    width: 99vw;
-    border:2px solid black;
-    display: flex;
+    /* width: 99vw; */
+    /* border:2px solid black; */
+    
 }
 
 
 app-my-posts{
-    min-height: 100svh;
+    /* min-height: 100svh; */
     /* width: 90%;  */
     /* border:2px solid blue; */
-     display: flex;
-     justify-content: space-around;
-     margin-left:200px;     /* align-items: center; */
+     /* display: flex; */
+     /* justify-content: space-around; */
+     /* margin-left:200px;     align-items: center; */
 
     
 }
-app-talkies,app-profile-view{
+app-profile-view{
     /* border:11px solid yellow; */
-    /* background-color: red; */
-    min-height: 100svh;
+    background-color: red;
+    /* min-height: 100svh;
     margin :0 auto;
-    flex:0.9
+    flex:0.9 */
 }
 app-profile-view{
-    margin: left 320px;
+    /* margin: left 320px; */
 }
 
 app-landing-page{
@@ -92,11 +126,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 @media screen and (max-width:1623px){
-    app-all-posts,app-my-posts,app-talkies{
+    app-all-posts,app-my-posts{
         flex:1;
         width:100vw;
         margin:0 auto;
     }
+   
  
   
     

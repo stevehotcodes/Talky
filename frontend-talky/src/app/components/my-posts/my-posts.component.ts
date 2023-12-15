@@ -15,7 +15,7 @@ export class MyPostsComponent {
 
   openDialog(){
     this.matDialog.open(EditProfileComponent,{
-      width:'700px',
+      width:'43.75rem',
       
       
     });

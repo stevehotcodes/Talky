@@ -7,7 +7,7 @@
         <header>
             <h1>Create Post</h1>
         </header>
-        <form (ngSubmit)="submit()" class=" ml-7 w-[90%] h-[90vh]">
+        <form (ngSubmit)="submit()" class=" ml-7 w-[90%] h-[50vh]">
             <mat-form-field style="width: 100%;">
               <mat-label>Post content</mat-label>
             
@@ -27,10 +27,7 @@
 
               
                 
-                    <input type="file"  (change)="onFileChange($event)"   accept="image/*">
-                    <div *ngIf="imagePreviewUrl">
-                      <img [src]="imagePreviewUrl" alt="Image Preview">
-                    </div>
+                    
                 
                   
               
@@ -41,6 +38,10 @@
                 
                 
             </mat-dialog-actions>
+            <input type="file"  (change)="onFileChange($event)"   accept="image/*">
+                    <div *ngIf="imagePreviewUrl">
+                      <img [src]="imagePreviewUrl" alt="Image Preview">
+                    </div>
           </form>
           
     </div>

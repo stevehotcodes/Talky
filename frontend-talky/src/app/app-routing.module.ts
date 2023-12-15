@@ -8,6 +8,8 @@ import { MyPostsComponent } from './components/my-posts/my-posts.component';
 import { TalkiesComponent } from './components/talkies/talkies.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { ProfileViewComponent } from './components/profile-view/profile-view.component';
+import {DeActivateGuard } from './guards/deActivate.guard';
+import { UserGuard } from './guards/user.guard';
 
 const routes: Routes = [
   {path:'',component:LandingPageComponent},

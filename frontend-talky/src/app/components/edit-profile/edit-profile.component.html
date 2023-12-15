@@ -34,8 +34,33 @@
             </div>
         </header>
         <form [formGroup]="editProfileForm" class=" ml-7 w-[90%]">
+          <div class="label-input-group">
+            <label>Edit Name</label><br>
+            <input type="text" matInput name="" id="" placeholder="fullname" formControlName="fullName">
+           
+        </div>
+        <div class="label-input-group">
+          <label>User Name</label><br>
+          <input type="text" matInput name="" id="" placeholder="userName" formControlName="fullName">
+         
+      </div>
+      <div class="label-input-group">
+        <label> email</label><br>
+        <input type="text" matInput name="" id="" placeholder="email" formControlName="fullName" readonly>
+       
+    </div>
     
+    <div class="label-input-group">
+      <label>Bio</label><br>
+      <input type="text" matInput name="" id="" placeholder="bio" formControlName="bio">
+   
+  </div>
 
+  <div class="label-input-group">
+    <label>Pass</label><br>
+    <input type="text" matInput name="" id="" placeholder="password" formControlName="fullName">
+   
+</div>
               <mat-dialog-actions align="end">
                 <button mat-raised-button color="primary" type="submit" (click)="submit()" >Edit</button>
                 <!-- <button mat-raised-button color="warn" matDialogClose="">Cancel</button> -->

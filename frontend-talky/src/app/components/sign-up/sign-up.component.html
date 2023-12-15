@@ -57,7 +57,11 @@
             <div class="label-input-group">
                 <label>Confirm Password</label><br>
                 <input type="text" name="" id="" placeholder="Confirm Password" formControlName="confirmPassword">
-
+                <mat-error *ngIf="signupForm.controls['password'].touched && signupForm.controls['password'].invalid">
+                    <span *ngIf="signupForm!.controls['password'].hasError('required')">password is mandatory.</span>
+                    <span *ngIf="signupForm!.controls['password'].hasError('pattern')">A valid password must contain uppercase,lowercase,special characters, and numbers </span>
+                  
+                  </mat-error>
                 
                 
             </div>

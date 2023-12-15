@@ -7,6 +7,7 @@ import {Cloudinary, CloudinaryImage} from '@cloudinary/url-gen';
 
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-post-create',
@@ -19,7 +20,7 @@ export class PostCreateComponent implements OnInit  {
    selectedFile: File | null = null;
    imagePreviewUrl: string | null = null;
 
-   constructor(private formBuilder:FormBuilder, private route:Router, private dialogRef:MatDialogRef<PostCreateComponent>){}
+   constructor(private formBuilder:FormBuilder, private route:Router, private dialogRef:MatDialogRef<PostCreateComponent>,private postSvc:PostsService){}
 
 
   
@@ -35,7 +36,11 @@ export class PostCreateComponent implements OnInit  {
   
     console.log(this.imagePreviewUrl);
 
-    console.log(this.postContent)
+    console.log(this.postContent);
+
+    
+
+
     this.dialogRef.close()
     this.route.navigate(['all'])
     
@@ -72,5 +77,9 @@ export class PostCreateComponent implements OnInit  {
   //   reader.readAsDataURL(this.selectedFile as Blob);
   // }
 
+
+  createPost(){
+    this.postSvc.createPost()
+  }
 
 }
