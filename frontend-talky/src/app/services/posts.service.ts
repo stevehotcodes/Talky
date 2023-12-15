@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { InewPostDetails, InewUserDetails } from '../interfaces/interfaces';
 
 
 @Injectable({
@@ -13,7 +13,8 @@ export class PostsService {
   constructor(private http:HttpClient) { }
 
 
-   createPost(postDetails:any){
-    return  this.http.post(postDetails,this.baseUrl+`/new`)
+   createPost(newPostDetails:InewPostDetails){
+    return  this.http.post(this.baseUrl+`/new`,newPostDetails)
    }
+   
 }

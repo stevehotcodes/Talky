@@ -8,6 +8,8 @@ import {Cloudinary, CloudinaryImage} from '@cloudinary/url-gen';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { PostsService } from 'src/app/services/posts.service';
+import { InewPostDetails, InewPostSuccessMessage } from 'src/app/interfaces/interfaces';
+import { FlashmessagesService } from 'src/app/services/flashmessages.service';
 
 @Component({
   selector: 'app-post-create',
@@ -20,7 +22,7 @@ export class PostCreateComponent implements OnInit  {
    selectedFile: File | null = null;
    imagePreviewUrl: string | null = null;
 
-   constructor(private formBuilder:FormBuilder, private route:Router, private dialogRef:MatDialogRef<PostCreateComponent>,private postSvc:PostsService){}
+   constructor(private formBuilder:FormBuilder, private route:Router, private dialogRef:MatDialogRef<PostCreateComponent>,private postSvc:PostsService,private flashMsg:FlashmessagesService){}
 
 
   
@@ -34,16 +36,29 @@ export class PostCreateComponent implements OnInit  {
 
   submit(){
   
-    console.log(this.imagePreviewUrl);
+    console.log("image url ment to go to the db ",this.imagePreviewUrl)
+    if(this.postContent.trim() !==""|| this.imagePreviewUrl!=""){
+      const newPost:InewPostDetails={
+        postContent:this.postContent,
+        postImageUrl:this.imagePreviewUrl as string
+      }
+       console.log(newPost)
+      this.postSvc.createPost(newPost).subscribe(
+       (res:any)=>{
+            console.log(res)
+            this.flashMsg.pushMessage({
+              type:'success',
+              message:res.message
+            })
+        },
+        err=>{
+          console.log(err)
+        }
+      )
+      
 
-    console.log(this.postContent);
-
-    
-
-
-    this.dialogRef.close()
-    this.route.navigate(['all'])
-    
+    }
+    this.dialogRef.close()    
 
   }
 
@@ -78,8 +93,6 @@ export class PostCreateComponent implements OnInit  {
   // }
 
 
-  createPost(){
-    this.postSvc.createPost()
-  }
+
 
 }

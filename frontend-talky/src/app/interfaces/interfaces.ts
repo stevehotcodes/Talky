@@ -17,3 +17,14 @@ export interface IflashMessage {
     type: 'error' | 'success' | 'info'
     message:string
   }
+
+  
+export interface InewPostDetails{
+    postContent:string
+    postImageUrl:string
+ }
+
+ export interface InewPostSuccessMessage{
+    message:string
+    postId:string
+ }

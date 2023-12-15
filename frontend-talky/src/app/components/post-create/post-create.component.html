@@ -11,7 +11,7 @@
             <mat-form-field style="width: 100%;">
               <mat-label>Post content</mat-label>
             
-              <textarea matInput [(ngModel)]="postContent" name="postContent" placeholder="What's happening?"></textarea>
+              <textarea matInput [(ngModel)]="postContent" name="postContent" placeholder="What's happening?"[(ngModel)]="postContent"></textarea >
               <!-- <mat-error *ngIf="createPostForm.controls['postContent'].touched && createPostForm.controls['postContent'].invalid">
                 <span *ngIf="createPostForm!.controls['postContent'].hasError('required')">This field is mandatory.</span>
               </mat-error> -->
