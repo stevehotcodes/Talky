@@ -36,7 +36,7 @@ export interface InewPostDetails{
     userID:string
  }
  export interface IPostsWithUserDetails{
-    postId:string
+    postID:string
     postImageUrl:string
     postContent:string
     postTImeStamp:string

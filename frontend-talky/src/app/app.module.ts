@@ -29,6 +29,7 @@ import { ProfileViewComponent } from './components/profile-view/profile-view.com
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { InterceptorService } from './services/interceptor.service';
 import { FlashmessagesComponent } from './components/flashmessages/flashmessages.component';
+import { CommentComponent } from './components/comment/comment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { FlashmessagesComponent } from './components/flashmessages/flashmessages
 
     ProfileViewComponent,
      FlashmessagesComponent,
+     CommentComponent,
     
   
   
