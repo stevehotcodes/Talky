@@ -16,6 +16,11 @@ export const createComment = async (req: ExtendedUser, res: Response) => {
         const { postID } = req.params
 
         const { commentContent } = req.body
+        console.log("Request Payload",commentContent)
+        
+        if(!commentContent){
+            return res.status(400).json({message:"comment cannot be empty"})
+        }
         //check whether the post exist or deleted
         let post:IPosts=(await dbInstance.exec('getOnePost',{id:postID})).recordset[0]
         console.log(post)
