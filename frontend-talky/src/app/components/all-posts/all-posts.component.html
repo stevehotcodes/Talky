@@ -68,7 +68,7 @@
           
           <!-- post icons -->
         
-        <main class="2xl:ml-[--w-side] xl:ml-[--w-side-md] md:ml-[--w-side-small] mt-2" *ngFor="let item of posts" >
+        <main class="2xl:ml-[--w-side] xl:ml-[--w-side-md] md:ml-[--w-side-small] mt-2" *ngFor="let item of posts ;let i = index" >
         
         <div class="main__inner">
         
@@ -101,6 +101,7 @@
                   <p class="post-title">{{item.postContent}}</p>
         
               </div>
+            <p> here is the no of likes for this post{{item.likesCount}}</p>
         
           </div>
         
@@ -122,7 +123,7 @@
         
           <div class="sm:p-4 p-2.5 flex items-center  justify-around text-xs font-semibold">
         
-              <div class="flex items-center justify-around gap-2.5">
+              <div class="flex items-center justify-around gap-2.5 "(click)="toggleShowComment(item.postID,i)">
         
                   <button type="button" class="button__ico text-red-500  dark:bg-slate-700 w-[30px] ">
         
@@ -131,87 +132,65 @@
         
                        </button>
         
-                  <a href="#">1,300</a>
+                  <a >1,300</a>
         
               </div>
         
-              <div class="flex items-center gap-3">
+              <div class="flex items-center gap-3" (click)="addAliketoPost(item.postID)">
         
                   <button type="button" class="button__ico  dark:bg-slate-700 w-[30px] ">
                     <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M320 458.16S304 464 256 464s-74-16-96-32H96a64 64 0 01-64-64v-48a64 64 0 0164-64h30a32.34 32.34 0 0027.37-15.4S162 221.81 188 176.78 264 64 272 48c29 0 43 22 34 47.71-10.28 29.39-23.71 54.38-27.46 87.09-.54 4.78 3.14 12 7.95 12L416 205" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M416 271l-80-2c-20-1.84-32-12.4-32-30h0c0-17.6 14-28.84 32-30l80-4c17.6 0 32 16.4 32 34v.17A32 32 0 01416 271zM448 336l-112-2c-18-.84-32-12.41-32-30h0c0-17.61 14-28.86 32-30l112-2a32.1 32.1 0 0132 32h0a32.1 32.1 0 01-32 32zM400 464l-64-3c-21-1.84-32-11.4-32-29h0c0-17.6 14.4-30 32-30l64-2a32.09 32.09 0 0132 32h0a32.09 32.09 0 01-32 32zM432 400l-96-2c-19-.84-32-12.4-32-30h0c0-17.6 13-28.84 32-30l96-2a32.09 32.09 0 0132 32h0a32.09 32.09 0 01-32 32z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
                    
-                        like
+                        like{{item.likesCount}}
                        </button>
         
-                  <span>260</span>
+                  <span> like {{item.likesCount}}</span>
         
               </div>
         
-              <button type="button" class="button__ico ml-auto">
+              
         
-                   <!-- <ion-icon class="text-xl" name="paper-plane-outline"></ion-icon>  -->
+              <button *ngIf="toggleClickEvent" type="button" class="button__ico" (click)="toggleShowComment(item.postID,i)"> 
         
-                  </button>
-        
-              <button type="button" class="button__ico"> 
-        
-                  <!-- <ion-icon class="text-xl" name="share-outline"></ion-icon>  -->
+                show comments
         
               </button>
-        
-          </div>
+                 </div>
         
           <!-- comments -->
         
-          <div class="sm:p-4 p-2.5 border-t border-gray-100 font-normal space-y-3 relative dark:border-slate-700/40"> 
+          <div  *ngIf="postCommentStates[item.postID]"  lclass="sm:p-4 p-2.5 border-t border-gray-100 font-normal space-y-3 relative dark:border-slate-700/40"> 
+            <button *ngIf="!toggleClickEvent" type="button" class="button__ico" (click)="toggleShowComment(item.postID,i)"> 
         
-              <div class="flex items-start gap-3 relative">
+                show comments
+        
+              </button>
+              <button  *ngIf="toggleClickEvent"   type="button" class="button__ico" (click)="toggleShowComment(item.postID,i)"> 
+        
+                hide comments
+        
+              </button>
+              <div class="flex items-start gap-3 relative" *ngFor="let comment of comments" >
         
                   <a href="profile.html"> <img src="../../../assets/man.png" alt="" class="w-10 h-10 mt-1 rounded-full"> </a>
         
                   <div class="flex-1">
         
-                      <a href="profile.html" class="text-black font-medium inline-block dark:text-white"> Steeve </a>
+                      <a href="profile.html" class="text-black font-medium inline-block dark:text-white"> {{comment.commentedBy}} </a>
         
-                      <p class="mt-0.5"> I love taking photos of nature and animals. 🌳🐶</p>
+                      <p class="mt-0.5"> {{comment.commentContent}} 🌳🐶</p>
         
                   </div>
         
               </div>
         
-              <div class="flex items-start gap-3 relative">
-        
-                  <a href="profile.html"> <img src="../../../assets/man.png" alt="" class="w-10 h-10 mt-1 rounded-full"> </a>
-        
-                  <div class="flex-1">
-        
-                      <a href="profile.html" class="text-black font-medium inline-block dark:text-white"> Caleb </a>
-        
-                      <p class="mt-0.5">  I enjoy people and emotions. 😊😢 </p>
-        
-                  </div>
-        
-              </div> 
-        
-              <div class="flex items-start gap-3 relative">
-        
-                  <a href="profile.html"> <img src="../../../assets/man.png" alt="" class="w-10 h-10 mt-1 rounded-full"> </a>
-        
-        
-                  <div class="flex-1">
-        
-                      <a href="profile.html" class="text-black font-medium inline-block dark:text-white"> Daniel </a>
-        
-                      <p class="mt-0.5">  Photography is my passion. 🎨📸   </p>
-        
-                  </div>
-        
-              </div>
+              
         
           </div>
         
           <!-- add comment -->
-          <button (click)="toggleCommentInput(item.postID)">Toggle Comment</button>
+          <button (click)="toggleCommentInput(item.postID)">Add Comment</button>
+         
 
           <img src="../../../assets/chatbubbles-outline.svg" alt="" class="w-6 h-6 rounded-full">
           

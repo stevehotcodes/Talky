@@ -3,6 +3,6 @@ CREATE OR ALTER PROCEDURE getLikesofAPost(
 )
 AS
 BEGIN
-    SELECT * FROM postLikesTable
+   SELECT COUNT(*) AS postLikes FROM postLikesTable
     WHERE postID=@postID
 END

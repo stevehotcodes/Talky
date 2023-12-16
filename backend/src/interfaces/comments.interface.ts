@@ -25,3 +25,20 @@ export interface ICommentWithuserDetails{
     imagePost:string
 
 }
+
+
+export interface ICommentWithUserAndPostInfo{
+    id:string
+    commentContent:string
+    commenterID:string
+    isDeleted:number
+    postID:string
+    commentedAt:string
+    parentCommentID:string
+    postImage:string
+    postedAt:string
+    postCaption:string
+    commenterFullName:string
+    commentedBy:string
+    
+}

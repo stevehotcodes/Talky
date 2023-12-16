@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 import { ExtendedUser } from "../middlewares/verifyToken"
 // import { IUserDetails, User } from "../interfaces/user.interfaces";
 import DatabaseHelper from "../helpers/dbConnection.helper";
-import { ICommentWithuserDetails } from '../interfaces/comments.interface';
+import { ICommentWithUserAndPostInfo, ICommentWithuserDetails } from '../interfaces/comments.interface';
 import { IPosts } from '../interfaces/posts.interface';
 
 const dbInstance = DatabaseHelper.getInstance()
@@ -17,7 +17,7 @@ export const createComment = async (req: ExtendedUser, res: Response) => {
 
         const { commentContent } = req.body
         console.log("Request Payload",commentContent)
-        
+
         if(!commentContent){
             return res.status(400).json({message:"comment cannot be empty"})
         }
@@ -72,7 +72,7 @@ export const getAllComments = async (req: Request, res: Response) => {
             return res.status(404).json({message:"the post does not exist ,cannot get the comments"})
         }
         
-        let comments = (await dbInstance.exec('getAllComments', { postID })).recordset;
+        let comments:ICommentWithUserAndPostInfo[] = (await dbInstance.exec('getAllComments', { postID })).recordset;
         if (!comments) { return res.status(404).json({ message: "no comments" }) };
 
         return res.status(200).json(comments)

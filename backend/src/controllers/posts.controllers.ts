@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 import { ExtendedUser } from "../middlewares/verifyToken"
 // import { IUserDetails, User } from "../interfaces/user.interfaces";
 import DatabaseHelper from "../helpers/dbConnection.helper";
-import { IPosts, IPostsWithUserDetails } from '../interfaces/posts.interface';
+import {  IPosts, IPostsWithUserDetails } from '../interfaces/posts.interface';
 
 const dbInstance = DatabaseHelper.getInstance()
 
@@ -47,7 +47,7 @@ export const createNewPost = async (req: ExtendedUser, res: Response) => {
 export const getAllPost = async (req: ExtendedUser, res: Response) => {
     try {
 
-        const posts: IPostsWithUserDetails[] = await (await dbInstance.exec('getAllPosts')).recordset
+        const posts:IPostsWithUserDetails[] = await (await dbInstance.exec('getAllPosts')).recordset
         if (!posts.length) {
             return res.status(404).json({ message: "No posts found" });
         }

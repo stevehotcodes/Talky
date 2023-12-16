@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IPosts, IPostsWithUserDetails, InewPostDetails, InewUserDetails } from '../interfaces/interfaces';
+import { IPostWithCommentsAndUserDetails, IPosts, IPostsWithUserDetails, InewPostDetails, InewUserDetails } from '../interfaces/interfaces';
 import { Observable } from 'rxjs';
 
 
@@ -21,5 +21,6 @@ export class PostsService {
    getAllPosts():Observable<IPostsWithUserDetails[]>{
      return this.http.get<IPostsWithUserDetails[]>(this.baseUrl+`/all`)
    }
+   
    
 }
